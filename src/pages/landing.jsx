@@ -45,7 +45,7 @@ const LandingPage = () => {
 						How does Trimmer Url Shortnerr works?
 					</AccordionTrigger>
 					<AccordionContent>
-						Yes. It adheres to the WAI-ARIA design pattern.
+						who knows?..
 					</AccordionContent>
 				</AccordionItem>
 				<AccordionItem value="item-2">
