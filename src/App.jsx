@@ -26,7 +26,7 @@ const router = createBrowserRouter([
 			{
 				path: "/dashboard",
 				element: (
-					//acts as a route gaurd cant be acessed if not logged in
+					//RequireAuth acts as a route gaurd cant be acessed if not logged in
 					<RequireAuth>
 						<DashBoard />,
 					</RequireAuth>

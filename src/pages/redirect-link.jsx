@@ -6,9 +6,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import { BarLoader } from "react-spinners";
 
 const RedirectLink = () => {
-	//gets the parameter after link "/"
+	//gets the parameter from link after "/"
 	const { id } = useParams();
 	//getting id and url from the params
+	//useFetch hook is invoked here
 	const { data, loading, fn } = useFetch(getLongUrl, id);
 	//getting the clicks on the url
 	const { loading: statsLoading, fn: fnStats } = useFetch(storeClicks, {
@@ -23,6 +24,7 @@ const RedirectLink = () => {
 
 	//when data is recieved
 	useEffect(() => {
+		//fnStats has finally block for redirection
 		if (!loading && data) fnStats();
 		// navigate(data?.original_url);
 	}, [loading]);
