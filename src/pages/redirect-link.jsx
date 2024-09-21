@@ -25,7 +25,7 @@ const RedirectLink = () => {
 	//when data is recieved
 	useEffect(() => {
 		//fnStats has finally block for redirection
-		if (!loading && data) alert("hii");
+		if (!loading && data) fnStats();
 	}, [loading]);
 
 	if (loading && statsLoading) {

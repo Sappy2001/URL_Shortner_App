@@ -62,6 +62,10 @@ const Link = () => {
 	if (url) {
 		link = url?.custom_url ? url?.custom_url : url?.short_url;
 	}
+
+	const fullUrl = window.location.href;
+	const baseUrl = fullUrl.split("/").slice(0, 3).join("/");
+	const reqUrl = baseUrl + "/" + link;
 	return (
 		<>
 			{(loading || loadingStats) && (
@@ -75,11 +79,11 @@ const Link = () => {
 						{url?.title}
 					</span>
 					<a
-						href={`https://shorl.in/${link}`}
+						href={reqUrl}
 						target="_blank"
 						className="font-bold text-3xl  sm:text-4xl hover:underline cursor-pointer text-blue-400"
 					>
-						https://shorl.in/{link}
+						{reqUrl}
 					</a>
 					<a
 						href={url?.original_url}
